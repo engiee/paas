@@ -8,7 +8,6 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '../views/layout/Layout'
-
 /**
 * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
 * redirect: noredirect           if `redirect:noredirect` will no redirct in the breadcrumb
@@ -21,7 +20,8 @@ import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
   { path: '/login', component: _import('login/index'), hidden: true },
   { path: '/404', component: _import('404'), hidden: true },
-
+  { path: '/home', component: _import('home/index'), hidden: true},
+  { path: '/developer', component: _import('developer/index'), hidden: true},
   {
     path: '/',
     component: Layout,
@@ -68,6 +68,7 @@ export const constantRouterMap = [
       }
     ]
   },
+
 
   { path: '*', redirect: '/404', hidden: true }
 ]
