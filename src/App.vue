@@ -13,7 +13,7 @@
           <i class="el-icon-caret-bottom"></i>
         </div>
         <el-dropdown-menu class="user-dropdown" slot="dropdown">
-          <router-link class="inlineBlock" to="/">
+          <router-link class="inlineBlock" to="/home">
             <el-dropdown-item>
               Home
             </el-dropdown-item>
@@ -44,6 +44,9 @@ export default {
       'name'
     ])
   },
+  created:function () {
+    this.activeName = window.localStorage.getItem('activeName');
+  },
   methods:{
     tabClick(tab, event) {
       if(this.activeName == 'home'){
@@ -54,13 +57,15 @@ export default {
         this.$router.push('/example')
       }else if(this.activeName == 'developer'){
         this.$router.push('/developer')
-      }
+      };
+      window.localStorage.setItem('activeName',this.activeName);
     },
     toggleSideBar() {
       this.$store.dispatch('ToggleSideBar')
     },
     logout() {
       this.$store.dispatch('LogOut').then(() => {
+        window.localStorage.setItem('activeName','home');
         location.reload() // 为了重新实例化vue-router对象 避免bug
       })
     }
