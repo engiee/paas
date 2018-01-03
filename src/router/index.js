@@ -22,6 +22,7 @@ export const constantRouterMap = [
   { path: '/404', component: _import('404'), hidden: true },
   { path: '/home', component: _import('home/index'), hidden: true},
   { path: '/developer', component: _import('developer/index'), hidden: true},
+  { path: '/product', component: _import('product/index')},
   {
     path: '/',
     component: Layout,
@@ -39,19 +40,19 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '应用托管服务', icon: 'example' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: _import('table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: 'Web应用托管', icon: 'table' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: _import('tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'Dubbo应用托管', icon: 'tree' }
       }
     ]
   },
