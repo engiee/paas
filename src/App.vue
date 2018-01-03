@@ -49,9 +49,9 @@ export default {
       if(this.activeName == 'home'){
         this.$router.push('/home')
       }else if(this.activeName == 'product'){
-        this.$router.push('/form/index')
+        this.$router.push('/product')
       }else if(this.activeName == 'console'){
-        this.$router.push('/example/table')
+        this.$router.push('/example')
       }else if(this.activeName == 'developer'){
         this.$router.push('/developer')
       }
