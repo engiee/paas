@@ -5,8 +5,9 @@
 </template>
 
 <script>
-
-export default {
+ // import axios from 'axios'
+  import { getList } from '@/api/table'
+ export default {
   data() {
     return {
       list: null,
@@ -14,9 +15,14 @@ export default {
     }
   },
   created() {
+    this.getList()
   },
   methods: {
-
+     getList(){
+       getList('/table/list','get',this.listQuery).then(response => {
+         console.log(response)
+       })
+     }
   }
 }
 </script>
