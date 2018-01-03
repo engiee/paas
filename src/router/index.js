@@ -35,36 +35,51 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/applicationDeposit',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
+    redirect: '/applicationDeposit/web',
+    name: 'applicationDeposit',
     meta: { title: '应用托管服务', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: _import('table/index'),
+        path: 'web',
+        name: 'web',
+        component: _import('console/applicationDeposit/web'),
         meta: { title: 'Web应用托管', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: _import('tree/index'),
+        path: 'dubbo',
+        name: 'dubbo',
+        component: _import('console/applicationDeposit/dubbo'),
         meta: { title: 'Dubbo应用托管', icon: 'tree' }
+      },
+      {
+        path: 'java',
+        name: 'java',
+        component: _import('console/applicationDeposit/java'),
+        meta: { title: 'Java应用托管', icon: 'tree' }
       }
     ]
   },
 
   {
-    path: '/form',
+    path: '/productAndService',
     component: Layout,
+    redirect: '/productAndService/index',
+    name: 'Example2',
+    meta: { title: '产品与服务', icon: 'example' },
     children: [
       {
         path: 'index',
         name: 'Form',
-        component: _import('form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        component: _import('console/productAndService/index'),
+        meta: { title: '云服务器', icon: 'form' }
+      },
+      {
+        path: 'index2',
+        name: 'Form2',
+        component: _import('console/productAndService/index2'),
+        meta: { title: '云关系数据库', icon: 'form' }
       }
     ]
   },

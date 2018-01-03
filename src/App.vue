@@ -54,7 +54,7 @@ export default {
       }else if(this.activeName == 'product'){
         this.$router.push('/product')
       }else if(this.activeName == 'console'){
-        this.$router.push('/example')
+        this.$router.push('/applicationDeposit')
       }else if(this.activeName == 'developer'){
         this.$router.push('/developer')
       };
