@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <nav id="nav">
+      <div class="logoBox">
+        <img :src="logo_img" alt="">
+        <span>“XXX”XX大数据服务平台</span>
+      </div>
       <el-tabs class="navMenu" v-model="activeName" @tab-click="tabClick()">
         <el-tab-pane label="首页" name="home"></el-tab-pane>
         <el-tab-pane label="产品" name="product"></el-tab-pane>
@@ -13,13 +17,25 @@
           <i class="el-icon-caret-bottom"></i>
         </div>
         <el-dropdown-menu class="user-dropdown" slot="dropdown">
+          <el-dropdown-item>
+            控制台
+          </el-dropdown-item>
+          <el-dropdown-item>
+            AccessKeys
+          </el-dropdown-item>
+          <el-dropdown-item>
+            我的订单
+          </el-dropdown-item>
+          <el-dropdown-item>
+            修改密码
+          </el-dropdown-item>
           <router-link class="inlineBlock" to="/home">
             <el-dropdown-item>
               Home
             </el-dropdown-item>
           </router-link>
           <el-dropdown-item divided>
-            <span @click="logout" style="display:block;">LogOut</span>
+            <span @click="logout" style="display:block;">退出</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -30,11 +46,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import logo_img from '@/assets/img/logo.png'
 export default {
   name: 'app',
   data(){
     return{
-      activeName: 'home'
+      activeName: 'home',
+      logo_img
     }
   },
   computed: {
@@ -86,9 +104,36 @@ export default {
       position: fixed;
       width: 100%;
       z-index: 3;
+      .logoBox{
+        width:350px;
+        float: left;
+        height:100%;
+        img{
+          margin: 19px 8px 0px 48px;
+          width:28px;
+          float: left;
+        }
+        span{
+          line-height: 24px;
+          color: rgb(0, 110, 195);
+          font-weight: bold;
+          font-size: 20px;
+          width: 380px;
+          display: block;
+          margin-top: 20px;
+        }
+      }
       .navMenu {
         width: 333px;
-        float: left;;
+        float: left;
+        margin-top: 14px;
+      }
+      .el-dropdown{
+        margin:27px;
+        cursor: pointer;
+        &:hover{
+          color:#006EC3;
+        }
       }
     }
   }
