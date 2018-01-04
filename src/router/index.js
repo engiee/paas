@@ -5,8 +5,10 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 
 Vue.use(Router)
 
-/* Layout */
+/* 控制台Layout */
 import Layout from '../views/layout/Layout'
+/* 产品Layout */
+import productLayout from '../views/product/Layout'
 /**
 * hidden: true                   如果 `hidden:true` 侧边栏中不显示（默认为false）
 * redirect: noredirect           如果 `redirect:noredirect` 在面包屑导航里没有 redirct
@@ -21,7 +23,14 @@ export const constantRouterMap = [
   { path: '/404', component: _import('404'), hidden: true },
   { path: '/home', component: _import('home/index'), hidden: true},
   { path: '/developer', component: _import('developer/index'), hidden: true},
-  { path: '/product', component: _import('product/index')},
+  {
+    path: '/product',
+    component: _import('product/index'),
+    children: [{
+      path: 'one',
+      component: _import('dashboard/index')
+    }]
+  },
   {
     path: '/',
     component: Layout,
@@ -33,7 +42,6 @@ export const constantRouterMap = [
       component: _import('dashboard/index')
     }]
   },
-
   {
     path: '/applicationDeposit',
     component: Layout,
@@ -89,8 +97,36 @@ export const constantRouterMap = [
       }
     ]
   },
-
-
+  {
+    path: '/productCloudCalc',
+    component: productLayout,
+    redirect: '/productCloudCalc/webp',
+    name: 'productCloudCalc',
+    meta: { title: '云计算服务', icon: 'example' },
+    children: [
+      {
+        path: 'webp',
+        name: 'webp',
+        component: _import('product/productCloudCalc/web'),
+        meta: { title: 'Web应用托管', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/productCloudCalc',
+    component: productLayout,
+    redirect: '/productAndServece/cloudServer',
+    name: 'productCloudCalc',
+    meta: { title: '云计算服务', icon: 'example' },
+    children: [
+      {
+        path: 'webp',
+        name: 'webp',
+        component: _import('product/productCloudCalc/web'),
+        meta: { title: 'Web应用托管', icon: 'table' }
+      }
+    ]
+  },
   { path: '*', redirect: '/404', hidden: true }
 ]
 

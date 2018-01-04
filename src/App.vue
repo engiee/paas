@@ -67,16 +67,16 @@ export default {
   },
   methods:{
     tabClick(tab, event) {
-      if(this.activeName == 'home'){
+      if (this.activeName == 'home'){
         this.$router.push('/home')
-      }else if(this.activeName == 'product'){
-        this.$router.push('/product')
-      }else if(this.activeName == 'console'){
+      } else if (this.activeName == 'product') {
+        this.$router.push('/productCloudCalc')
+      } else if (this.activeName == 'console') {
         this.$router.push('/applicationDeposit')
-      }else if(this.activeName == 'developer'){
+      } else if (this.activeName == 'developer') {
         this.$router.push('/developer')
       };
-      window.localStorage.setItem('activeName',this.activeName);
+      window.localStorage.setItem('activeName', this.activeName);
     },
     toggleSideBar() {
       this.$store.dispatch('ToggleSideBar')

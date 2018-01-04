@@ -1,33 +1,22 @@
 <template>
   <scroll-bar>
-    <el-menu mode="vertical" unique-opened :default-active="'1-1'" :collapse="isCollapse" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
+    <el-menu mode="vertical" unique-opened :default-active="'3-1'" :collapse="isCollapse" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
       <!--<sidebar-item :routes="routes"></sidebar-item>-->
-      <el-submenu index="1">
+      <el-submenu index="3">
         <template slot="title">
           <svg-icon :icon-class="'tree'"></svg-icon>
-          <span>应用托管服务</span>
+          <span>云计算服务</span>
         </template>
-        <router-link :to="'/applicationDeposit/web'" :key="'web'">
-            <el-menu-item index="1-1">
-              <svg-icon  :icon-class="'eye'"></svg-icon>
-              <span>web应用托管</span>
-            </el-menu-item>
-        </router-link>
-        <router-link :to="'/applicationDeposit/dubbo'" :key="'dubbo'">
-          <el-menu-item index="1-2">
+        <router-link :to="'/productCloudCalc/webp'" :key="'webp'">
+          <el-menu-item index="3-1">
             <svg-icon  :icon-class="'eye'"></svg-icon>
-            <span>dubbo应用托管</span>
-          </el-menu-item>
-        </router-link>
-        <router-link :to="'/applicationDeposit/java'" :key="'java'">
-          <el-menu-item index="1-3">
-            <svg-icon  :icon-class="'eye'"></svg-icon>
-            <span>Java应用托管</span>
+            <span>web应用托管</span>
           </el-menu-item>
         </router-link>
 
+
       </el-submenu>
-      <el-submenu index="2">
+      <el-submenu index="4">
         <template slot="title">
           <svg-icon :icon-class="'tree'"></svg-icon>
           <span>产品与服务</span>
@@ -57,22 +46,22 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import SidebarItem from './SidebarItem'
-import ScrollBar from '@/components/ScrollBar'
+  import { mapGetters } from 'vuex'
+  import SidebarItem from './SidebarItem'
+  import ScrollBar from '@/components/ScrollBar'
 
-export default {
-  components: { SidebarItem, ScrollBar },
-  computed: {
-    ...mapGetters([
-      'sidebar'
-    ]),
-    routes() {
-      return this.$router.options.routes
-    },
-    isCollapse() {
-      return !this.sidebar.opened
+  export default {
+    components: { SidebarItem, ScrollBar },
+    computed: {
+      ...mapGetters([
+        'sidebar'
+      ]),
+      routes() {
+        return this.$router.options.routes
+      },
+      isCollapse() {
+        return !this.sidebar.opened
+      }
     }
   }
-}
 </script>
