@@ -80,6 +80,12 @@ export const constantRouterMap = [
         name: 'Form2',
         component: _import('console/productAndService/index2'),
         meta: { title: '云关系数据库', icon: 'form' }
+      },
+      {
+        path: 'index3',
+        name: 'Form3',
+        component: _import('console/productAndService/charts/index'),
+        meta: { title: '搜索引擎', icon: 'form' }
       }
     ]
   },
