@@ -56,9 +56,6 @@
       ...mapGetters([
         'sidebar'
       ]),
-      routes() {
-        return this.$router.options.routes
-      },
       isCollapse() {
         return !this.sidebar.opened
       }
