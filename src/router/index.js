@@ -113,20 +113,33 @@ export const constantRouterMap = [
     ]
   },
   {
-    path: '/productCloudCalc',
+    path: '/productAndService',
     component: productLayout,
-    redirect: '/productAndServece/cloudServer',
+    redirect: '/productAndService/cloudServicer',
     name: 'productCloudCalc',
-    meta: { title: '云计算服务', icon: 'example' },
+    meta: { title: '产品与服务', icon: 'example' },
     children: [
       {
-        path: 'webp',
-        name: 'webp',
-        component: _import('product/productCloudCalc/web'),
-        meta: { title: 'Web应用托管', icon: 'table' }
+        path: 'cloudServicer',
+        name: 'cloudServicer',
+        component: _import('product/productAndService/cloudServicer'),
+        meta: { title: '云服务器', icon: 'table' }
+      },
+      {
+        path: 'cloudRelationData',
+        name: 'cloudRelationData',
+        component: _import('product/productAndService/cloudRelationData'),
+        meta: { title: '云关系数据库', icon: 'table' }
+      },
+      {
+        path: 'researchEngine',
+        name: 'researchEngine',
+        component: _import('product/productAndService/researchEngine'),
+        meta: { title: '搜索引擎', icon: 'table' }
       }
     ]
   },
+
   { path: '*', redirect: '/404', hidden: true }
 ]
 

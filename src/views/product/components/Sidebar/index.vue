@@ -21,19 +21,19 @@
           <svg-icon :icon-class="'tree'"></svg-icon>
           <span>产品与服务</span>
         </template>
-        <router-link :to="'/productAndService/index'" :key="'web'">
+        <router-link :to="'/productAndService/cloudServicer'" :key="'web'">
           <el-menu-item index="2-1">
             <svg-icon  :icon-class="'eye'"></svg-icon>
             <span>云服务器</span>
           </el-menu-item>
         </router-link>
-        <router-link :to="'/productAndService/index2'" :key="'dubbo'">
+        <router-link :to="'/productAndService/cloudRelationData'" :key="'dubbo'">
           <el-menu-item index="2-2">
             <svg-icon  :icon-class="'eye'"></svg-icon>
             <span>云关系数据库</span>
           </el-menu-item>
         </router-link>
-        <router-link :to="'/productAndService/index3'" :key="'java'">
+        <router-link :to="'/productAndService/researchEngine'" :key="'java'">
           <el-menu-item index="2-3">
             <svg-icon  :icon-class="'eye'"></svg-icon>
             <span>搜索引擎</span>
