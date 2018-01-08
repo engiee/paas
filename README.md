@@ -24,4 +24,4 @@ npm run build
 npm run build --report
 ```
 ## License
-[MIT](https://github.com/PanJiaChen/vueAdmin-template/blob/master/LICENSE) license.
+[MIT](https://github.com/engiee/paas.git) license.
