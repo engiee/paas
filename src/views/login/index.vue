@@ -104,7 +104,7 @@ export default {
     }
     input {
       background: transparent;
-      border: 0px;
+      border: 0;
       -webkit-appearance: none;
       border-radius: 0px;
       padding: 12px 5px 12px 15px;
@@ -129,7 +129,7 @@ export default {
     .title {
       font-size: 26px;
       color: $light_gray;
-      margin: 0px auto 40px auto;
+      margin: 0 auto 40px auto;
       text-align: center;
       font-weight: bold;
     }
